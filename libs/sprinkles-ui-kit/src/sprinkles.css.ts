@@ -44,12 +44,13 @@ const responsiveProperties = defineProperties({
     paddingRight: space,
     border: {
       none: 0,
-      small: "1px solid"
+      small: '1px solid',
     },
     borderColor: colors,
     borderRadius: {
-      small: 5
-    }
+      small: 5,
+      round: 50,
+    },
     // etc.
   },
   shorthands: {

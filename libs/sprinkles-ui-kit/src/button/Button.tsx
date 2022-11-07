@@ -1,12 +1,11 @@
 import React from 'react';
-import { buttonClass } from './styles.css';
+import { button, ButtonVariants } from './styles.css';
 
-export const Button: React.FC<React.HTMLAttributes<HTMLButtonElement>> = (
-  props
-) => (
+export const Button: React.FC<
+  React.HTMLAttributes<HTMLButtonElement> & ButtonVariants
+> = ({ size, color, ...props }) => (
   <button
     {...props}
-    className={`${props.className || ''} ${buttonClass}`}
+    className={`${props.className || ''} ${button({ color, size })}`}
   />
 );
-
