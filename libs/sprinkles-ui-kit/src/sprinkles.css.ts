@@ -1,10 +1,14 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
-
+import { darken, lighten } from 'polished';
 const colors = {
   primary: '#40c0f0',
+  primaryDarker: darken(0.1, '#40c0f0'),
   secondary: '#f8ad1a',
+  secondaryDarker: darken(0.1, '#f8ad1a'),
   white: '#fff',
   dark: '#1C1D21',
+  darkLighter: lighten(0.1, '#1C1D21'),
+  gray: '#979797',
 };
 
 const bgColors = {
@@ -65,17 +69,34 @@ const responsiveProperties = defineProperties({
 
 const colorProperties = defineProperties({
   conditions: {
-    lightMode: {},
-    darkMode: { '@media': '(prefers-color-scheme: dark)' },
+    default: {},
+    hover: { selector: '&:hover' },
+    focus: { selector: '&:focus' },
+    disabled: { selector: '&:disabled' },
   },
-  defaultCondition: 'lightMode',
+  defaultCondition: 'default',
   properties: {
     color: colors,
     background: { ...colors, ...bgColors },
   },
 });
 
-export const sprinkles = createSprinkles(responsiveProperties, colorProperties);
+const cursorProperties = defineProperties({
+  conditions: {
+    default: {},
+    disabled: { selector: '&:disabled' },
+  },
+  defaultCondition: 'default',
+  properties: {
+    cursor: ['pointer', 'not-allowed'],
+  },
+});
+
+export const sprinkles = createSprinkles(
+  responsiveProperties,
+  colorProperties,
+  cursorProperties
+);
 
 // It's a good idea to export the Sprinkles type too
 export type Sprinkles = Parameters<typeof sprinkles>[0];

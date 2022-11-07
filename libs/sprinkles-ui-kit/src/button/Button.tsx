@@ -2,7 +2,7 @@ import React from 'react';
 import { button, ButtonVariants } from './button.css';
 
 export const Button: React.FC<
-  React.HTMLAttributes<HTMLButtonElement> & ButtonVariants
+  React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariants
 > = ({ size, color, ...props }) => (
   <button
     {...props}

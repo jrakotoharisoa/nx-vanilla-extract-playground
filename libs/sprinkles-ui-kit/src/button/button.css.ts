@@ -1,24 +1,53 @@
+import { style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { sprinkles } from '../sprinkles.css';
 
 export const button = recipe({
-  base: sprinkles({
-    borderRadius: 'round',
-    border: 'none',
-  }),
+  base: style([
+    sprinkles({
+      borderRadius: 'round',
+      border: 'none',
+      cursor: {
+        default: 'pointer',
+        disabled: 'not-allowed',
+      },
+    }),
+  ]),
 
   variants: {
     color: {
-      dark: sprinkles({ color: 'white', background: 'dark' }),
-      primary: sprinkles({ color: 'dark', background: 'primary' }),
-      secondary: sprinkles({ color: 'dark', background: 'secondary' }),
+      dark: sprinkles({
+        color: 'white',
+        background: { hover: 'darkLighter', default: 'dark', disabled: 'gray' },
+      }),
+      primary: sprinkles({
+        color: { default: 'dark', disabled: 'white' },
+        background: {
+          hover: 'primaryDarker',
+          default: 'primary',
+          disabled: 'gray',
+        },
+      }),
+      secondary: sprinkles({
+        color: { default: 'dark', disabled: 'white' },
+        background: {
+          hover: 'secondaryDarker',
+          default: 'secondary',
+          disabled: 'gray',
+        },
+      }),
     },
     size: {
-      medium: sprinkles({ paddingX: 'large', paddingY: 'medium' }),
-      large: sprinkles({ paddingX: 'large', paddingY: 'large' }),
+      medium: style([
+        sprinkles({ paddingX: 'large', paddingY: 'medium' }),
+        { fontSize: 14 },
+      ]),
+      large: style([
+        sprinkles({ paddingX: 'large', paddingY: 'large' }),
+        { fontSize: 16 },
+      ]),
     },
   },
-
   defaultVariants: {
     color: 'dark',
     size: 'medium',

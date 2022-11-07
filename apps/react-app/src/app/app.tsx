@@ -4,6 +4,9 @@ export function App() {
   return (
     <div className={container}>
       <Button size="large">Large button</Button>
+      <Button size="large" disabled>
+        Large button
+      </Button>
       <Button size="large" color="secondary">
         Large secondary button
       </Button>
