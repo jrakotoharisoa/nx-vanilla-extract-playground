@@ -1,30 +1,32 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
 const colors = {
-  primary: '#bfdbfe',
-  secondary: '#fcd34d',
+  primary: '#40c0f0',
+  secondary: '#f8ad1a',
   white: '#fff',
+  dark: '#1C1D21',
 };
 
 const bgColors = {
   white: '#fff',
-  dark: '#1f2937',
+  dark: '#01273b',
 };
 
-const space = {
+export const space = {
   none: 0,
   small: '4px',
   medium: '8px',
   large: '16px',
   // etc.
 };
+export const responsiveConditions = {
+  mobile: {},
+  tablet: { '@media': 'screen and (min-width: 768px)' },
+  desktop: { '@media': 'screen and (min-width: 1024px)' },
+};
 
 const responsiveProperties = defineProperties({
-  conditions: {
-    mobile: {},
-    tablet: { '@media': 'screen and (min-width: 768px)' },
-    desktop: { '@media': 'screen and (min-width: 1024px)' },
-  },
+  conditions: responsiveConditions,
   defaultCondition: 'mobile',
   properties: {
     display: ['none', 'flex', 'block', 'inline'],

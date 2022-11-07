@@ -10,6 +10,8 @@ export const button = recipe({
   variants: {
     color: {
       dark: sprinkles({ color: 'white', background: 'dark' }),
+      primary: sprinkles({ color: 'dark', background: 'primary' }),
+      secondary: sprinkles({ color: 'dark', background: 'secondary' }),
     },
     size: {
       medium: sprinkles({ paddingX: 'large', paddingY: 'medium' }),
