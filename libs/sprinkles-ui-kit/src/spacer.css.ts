@@ -1,12 +1,17 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 import { space } from './sprinkles.css';
 
-export const spaceX = style({});
-globalStyle(`${spaceX} > * + *`, {
+const spaceXMedium = style({});
+globalStyle(`${spaceXMedium} > * + *`, {
   marginLeft: space.medium,
 });
 
-export const spaceXSmall = style({});
+const spaceXSmall = style({});
 globalStyle(`${spaceXSmall} > * + *`, {
   marginLeft: space.medium,
 });
+
+export const spaceX = {
+  small: spaceXSmall,
+  medium: spaceXMedium,
+};

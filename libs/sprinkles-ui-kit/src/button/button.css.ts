@@ -18,12 +18,11 @@ export const button = recipe({
     color: {
       dark: sprinkles({
         color: 'white',
-        background: { hover: 'darkLighter', default: 'dark', disabled: 'gray' },
+        background: { default: 'dark', disabled: 'gray' },
       }),
       primary: sprinkles({
         color: { default: 'dark', disabled: 'white' },
         background: {
-          hover: 'primaryDarker',
           default: 'primary',
           disabled: 'gray',
         },
@@ -31,7 +30,6 @@ export const button = recipe({
       secondary: sprinkles({
         color: { default: 'dark', disabled: 'white' },
         background: {
-          hover: 'secondaryDarker',
           default: 'secondary',
           disabled: 'gray',
         },

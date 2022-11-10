@@ -1,13 +1,10 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
-import { darken, lighten } from 'polished';
+import { themeVars } from './theme-contract.css';
 const colors = {
-  primary: '#40c0f0',
-  primaryDarker: darken(0.1, '#40c0f0'),
-  secondary: '#f8ad1a',
-  secondaryDarker: darken(0.1, '#f8ad1a'),
+  primary: themeVars.color.primary,
+  secondary: themeVars.color.secondary,
   white: '#fff',
   dark: '#1C1D21',
-  darkLighter: lighten(0.1, '#1C1D21'),
   gray: '#979797',
 };
 
@@ -48,6 +45,10 @@ const responsiveProperties = defineProperties({
     paddingBottom: space,
     paddingLeft: space,
     paddingRight: space,
+    marginTop: space,
+    marginBottom: space,
+    marginLeft: space,
+    marginRight: space,
     border: {
       none: 0,
       small: '1px solid',
@@ -63,6 +64,9 @@ const responsiveProperties = defineProperties({
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
     paddingX: ['paddingLeft', 'paddingRight'],
     paddingY: ['paddingTop', 'paddingBottom'],
+    margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
+    marginX: ['marginLeft', 'marginRight'],
+    marginY: ['marginTop', 'marginBottom'],
     placeItems: ['justifyContent', 'alignItems'],
   },
 });
