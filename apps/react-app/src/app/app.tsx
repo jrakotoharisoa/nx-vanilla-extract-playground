@@ -1,22 +1,21 @@
-import { Button, sprinkles } from '@sunrise/sprinkles-ui-kit';
+import { Button } from '@sunrise/sprinkles-ui-kit';
 import { useState } from 'react';
-import * as styles from './app.css';
 import { theme, ugly } from './theme.css';
 
 export function App() {
   const [selectedTheme, setSelectedTheme] = useState(theme);
   return (
     <>
-      <div className={sprinkles({ marginBottom: 'medium' })}>
+      <div className="mb-2">
         <select
           value={selectedTheme}
           onChange={(e) => setSelectedTheme(e.target.value)}
         >
-          <option value={theme}>Comet theme</option>
-          <option value={ugly}>Ugly theme</option>
+          <option value={'default'}>Comet theme</option>
+          <option value={'ugly'}>Ugly theme</option>
         </select>
       </div>
-      <div className={[selectedTheme, styles.container].join(' ')}>
+      <div data-theme={selectedTheme} className="space-x-2">
         <Button size="large">Large button</Button>
         <Button size="large" disabled>
           Large button

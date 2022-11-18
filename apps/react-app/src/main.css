@@ -1,0 +1,19 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+
+@layer base {
+    :root {
+      --color-primary: #40c0f0;
+      --color-secondary: #f8ad1a;
+      --color-dark: #1C1D21;
+      /* ... */
+    }
+  }
+
+
+[data-theme="ugly"] {
+    --color-primary: red;
+    --color-secondary: pink;
+}

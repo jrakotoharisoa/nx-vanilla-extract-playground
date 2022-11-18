@@ -18,21 +18,12 @@ export const button = recipe({
     color: {
       dark: sprinkles({
         color: 'white',
-        background: { default: 'dark', disabled: 'gray' },
       }),
       primary: sprinkles({
         color: { default: 'dark', disabled: 'white' },
-        background: {
-          default: 'primary',
-          disabled: 'gray',
-        },
       }),
       secondary: sprinkles({
         color: { default: 'dark', disabled: 'white' },
-        background: {
-          default: 'secondary',
-          disabled: 'gray',
-        },
       }),
     },
     size: {
